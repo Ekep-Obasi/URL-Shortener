@@ -2,6 +2,8 @@
 
 This is a URL shortener web application built with Node.js Express on the backend and React.js on the frontend. It uses MySQL as the database to store the URL mappings.
 
+[![URL-Shortener](client/public/preview-url.jpg)](https://github.com/Ekep-Obasi/URL-Shortner)
+
 ## **Features 🚀**
 
 * Shorten any valid URL 🎯
