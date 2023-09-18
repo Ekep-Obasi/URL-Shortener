@@ -1,20 +1,20 @@
-**## URL Shortener 🔗**
+## **URL Shortener 🔗**
 
 This is a URL shortener web application built with Node.js Express on the backend and React.js on the frontend. It uses MySQL as the database to store the URL mappings.
 
-**## Features 🚀**
+## **Features 🚀**
 
 * Shorten any valid URL 🎯
 * Copy the shortened link to your clipboard with a single click 🖱️
 * Receive an error message when the input is invalid ⚠️
 
-**## Prerequisites 🧰**
+## **Prerequisites 🧰**
 
 * Node.js 
 * MySQL 
 * React.js 
 
-**## Installation 🛠️**
+## **Installation 🛠️**
 
 1. Clone the Repo
 
@@ -44,7 +44,7 @@ npm start
 ```
 
 
-**## Usage 💁**
+## **Usage 💁**
 
 1. Open the React development server in your web browser:
 
@@ -56,15 +56,11 @@ http://localhost:3000
 3. The shortened link will be displayed in the output field 📋
 4. Click the "Copy" button to copy the shortened link to your clipboard 🖱️
 
-**## Contributing 🤝**
+## **Contributing 🤝**
 
 If you would like to contribute to this project, please read the contribution guidelines: CONTRIBUTING.md.
 
-**## License ⚖️**
-
-This project is licensed under the MIT License.
-
-**## Additional Information 💡**
+## **Additional Information 💡**
 
 This URL shortener application is still under development, but it is already functional and can be used to shorten and share URLs. It is designed to be easy to use and reliable.
 
