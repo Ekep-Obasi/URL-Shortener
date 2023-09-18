@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Input, Loader } from "../../component";
+import { Input } from "../../component";
 import StyledWrapper from "./Landing.styles";
 import { AppContext } from "../../context/appContext";
 
@@ -13,7 +13,6 @@ const Landing = () => {
         <p>Please Paste Your URL To Be Shortened</p>
       </header>
       <Input />
-      <Loader visibility={isLoading} />
     </StyledWrapper>
   );
 };

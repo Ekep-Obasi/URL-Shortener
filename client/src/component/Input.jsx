@@ -46,6 +46,7 @@ const StyledInput = styled.form`
     border: 2px solid #2196f3;
     cursor: pointer;
     border-radius: 0 16px 16px 0;
+    z-index: 10;
   }
 `;
 
