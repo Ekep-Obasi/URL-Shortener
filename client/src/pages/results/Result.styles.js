@@ -46,6 +46,7 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   position: relative;
+  color: #fff;
 
   header {
     position: absolute;

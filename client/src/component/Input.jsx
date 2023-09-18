@@ -2,6 +2,8 @@ import styled from "@emotion/styled";
 import { useNavigate } from "react-router-dom";
 import { useApp } from "../context/appContext";
 import shorten from "../services/shorten";
+import { toast } from "react-toastify";
+import validateUrl from "../utils/validate";
 
 const StyledInput = styled.form`
   display: flex;
@@ -50,21 +52,54 @@ const StyledInput = styled.form`
 export default function Input() {
   const navigate = useNavigate();
   const { isLoading, setShortUrl, setIsLoading } = useApp();
+
   async function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading((prev) => !prev);
-    console.log(isLoading);
-    const shortenedUrl = await shorten(e.target.elements.url.value);
-    setShortUrl(shortenedUrl.data);
-    navigate("/result");
-    setIsLoading(false);
-    console.log(isLoading);
+
+    const isValid = validateUrl(e.target.elements.url.value);
+    if (!isValid) return;
+
+    const id = toast.loading("Please wait...");
+    setIsLoading(true);
+
+    shorten(e.target.elements.url.value)
+      .then((res) => {
+        toast.update(id, {
+          render: "Operation succesful!",
+          type: "success",
+          autoClose: 5000,
+          hideProgressBar: false,
+          pauseOnHover: true,
+          draggable: true,
+          isLoading: false,
+        });
+        setShortUrl(res.data);
+        navigate("/result");
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        toast.update(id, {
+          render: "Failed to shorten url!",
+          type: "error",
+          autoClose: 5000,
+          hideProgressBar: false,
+          pauseOnHover: true,
+          draggable: true,
+          isLoading: false,
+        });
+        throw new Error(err);
+      });
   }
 
   return (
     <StyledInput onSubmit={(e) => handleSubmit(e)}>
-      <input type="text" placeholder="Enter the link here" name="url" />
-      <button type="submit">Shorten URL</button>
+      <input
+        type="text"
+        placeholder="Enter the link here"
+        name="url"
+        disabled={isLoading}
+      />
+      <button type="submit">Shorten</button>
     </StyledInput>
   );
 }

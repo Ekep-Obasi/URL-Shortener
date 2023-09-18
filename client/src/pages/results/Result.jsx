@@ -1,5 +1,6 @@
 import { StyledInput, StyledWrapper } from "./Result.styles";
 import { useApp } from "../../context/appContext";
+import { toast } from "react-toastify";
 
 const Result = () => {
   return (
@@ -22,6 +23,7 @@ const Input = () => {
     copyText.select();
     copyText.setSelectionRange(0, 99999);
     navigator.clipboard.writeText(copyText.value);
+    toast.success("Copied Text");
   };
 
   return (
