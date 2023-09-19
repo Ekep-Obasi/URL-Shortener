@@ -15,9 +15,8 @@ This is a URL shortener web application built with Node.js Express on the backen
 ## **Prerequisites 🧰**
 
 * Node.js 
-* MySQL 
-* React.js 
-
+* MySQL
+* 
 ## **Installation 🛠️**
 
 1. Clone the Repo
